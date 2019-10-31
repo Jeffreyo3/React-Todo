@@ -8,37 +8,41 @@ class TodoForm extends React.Component {
         };
     }
 
-    handleChages = e => {
-        this.State({
+    handleChanges = e => {
+        this.setState({
             itemName: e.target.value
         });
     };
-    
+
     handleSubmit = e => {
         e.preventDefault();
-        if(this.state.itemName !== "") {
-            this.PaymentResponse.addItem(this.state.itemName);
-            this.State({
+        if (this.state.itemName !== "") {
+            this.props.addItem(this.state.itemName);
+            this.setState({
                 itemName: ""
             });
         }
     };
-    
+
     render() {
-        console.log("rendering form");
+        console.log("rendering form...");
         return(
             <form onSubmit={this.handleSubmit}>
                 <input 
-                    onChange={this.handleChanges}
-                    type="text"
-                    name="item"
-                    value={this.state.itemName}
+                type="text" 
+                placeholder="New ToDo Item"
+                onChange={this.handleChanges}
+                name="item"
+                value={this.state.itemName}
                 />
-                <button>Add</button>
+                
+                <button>Add ToDo</button>
             </form>
-            
-        );
+        )
     }
+
+
 }
+
 
 export default TodoForm;

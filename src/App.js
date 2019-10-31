@@ -4,13 +4,7 @@ import TodoForm from './components/TodoComponents/TodoForm.js';
 import TodoList from './components/TodoComponents/TodoList.js';
 
 
-const data = [
-  {
-    name: "Example Item",
-    id: 1,
-    completed: false
-  }
-];
+const data = [{}];
 
 
 class App extends React.Component {
@@ -20,32 +14,18 @@ class App extends React.Component {
   constructor() {
     super();
     this.state = {
-      todo: data
+      todos: data,
+
     };
-    this.toggleCompleted = this.toggleCompleted.bind(this);
-  }
-  
-  toggleCompleted(itemId) {
-    console.log("togglePurchased: ", itemId);
-    this.setState({
-      todo: this.state.todo.map(item => {
-        if (item.id === itemId) {
-          return {
-            ...item,
-            completed: !item.completed
-          };
-        }
-        return item;
-      })
-    });
+
   }
 
   addItem = itemName => {
-    console.log("add item: ", itemName);
+    console.log("adding item: ", itemName);
 
     this.setState({
-      todo: [
-        ...this.state.todo,
+      todos: [
+        ...this.state.todos,
         {
           name: itemName,
           id: Date.now(),
@@ -53,7 +33,11 @@ class App extends React.Component {
         }
       ]
     });
+
+
   };
+  
+
   
   render() {
     console.log("rendering ... ");
@@ -61,12 +45,10 @@ class App extends React.Component {
       <div className="App">
         <div>
           <h2>ToDo List MVP!</h2>
-          <TodoForm addItem={this.addItem} />
+          <TodoForm addItem={this.addItem}/>
+          
         </div>
-        <TodoList 
-          todo={this.state.todo}
-          toggleCompleted={this.toggleCompleted}
-        />
+
       </div>
     );
   }
