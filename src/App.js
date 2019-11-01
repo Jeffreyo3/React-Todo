@@ -22,7 +22,7 @@ class App extends React.Component {
   }
 
   toggleCompleted = todoId => {
-    console.log("togglingCompleted: ", todoId);
+    console.log("toggleCompleted: ", todoId);
 
     this.setState({
       todos: this.state.todos.map(todo => {
@@ -63,7 +63,10 @@ class App extends React.Component {
         <div>
           <h2>ToDo List MVP!</h2>
           <TodoForm addTodo={this.addTodo}/>
-          <TodoList todos={this.state.todos}/>
+          <TodoList 
+          todos={this.state.todos}
+          toggleCompleted={this.toggleCompleted}
+          />
           
         </div>
 

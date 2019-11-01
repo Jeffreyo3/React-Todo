@@ -28,10 +28,10 @@ class TodoForm extends React.Component {
         console.log("rendering form...");
         return(
             <form onSubmit={this.handleSubmit}>
-                <input 
+                <input                 
+                onChange={this.handleChanges}
                 type="text" 
                 placeholder="New ToDo Item"
-                onChange={this.handleChanges}
                 name="todo"
                 value={this.state.todoName}
                 />

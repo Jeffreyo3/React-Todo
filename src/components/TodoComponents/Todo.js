@@ -7,6 +7,10 @@ const Todo = props => {
         todoClassName = todoClassName + " completed";
     }
 
+    // const handleClick = () => {
+    //     props.toggleCompleted(props.todo.id);
+    // };
+
     const handleClick = () => {
         props.toggleCompleted(props.todo.id);
     };
