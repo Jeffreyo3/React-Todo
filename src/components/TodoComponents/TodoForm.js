@@ -4,22 +4,22 @@ class TodoForm extends React.Component {
     constructor() {
         super();
         this.state = {
-            itemName: ""
+            todoName: ""
         };
     }
 
     handleChanges = e => {
         this.setState({
-            itemName: e.target.value
+            todoName: e.target.value
         });
     };
 
     handleSubmit = e => {
         e.preventDefault();
-        if (this.state.itemName !== "") {
-            this.props.addItem(this.state.itemName);
+        if (this.state.todoName !== "") {
+            this.props.addTodo(this.state.todoName);
             this.setState({
-                itemName: ""
+                todoName: ""
             });
         }
     };
@@ -32,10 +32,10 @@ class TodoForm extends React.Component {
                 type="text" 
                 placeholder="New ToDo Item"
                 onChange={this.handleChanges}
-                name="item"
-                value={this.state.itemName}
+                name="todo"
+                value={this.state.todoName}
                 />
-                
+
                 <button>Add ToDo</button>
             </form>
         )
