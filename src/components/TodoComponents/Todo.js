@@ -4,13 +4,15 @@ const Todo = props => {
 
     let todoClassName = "todo";
     if (props.todo.completed) {
-        todoClassName = todoClassName + " completed!";
+        todoClassName = todoClassName + " completed";
     }
 
-
+    const handleClick = () => {
+        props.toggleCompleted(props.todo.id);
+    };
 
     return(
-        <div className={todoClassName}>
+        <div onClick={handleClick} className={todoClassName}>
             <p>{props.todo.name}</p>
         </div>
     );

@@ -10,12 +10,12 @@ const TodoList = props => {
                 <Todo
                 key={todo.id}
                 todo={todo}
-                
+                toggleCompleted={props.toggleCompleted}
                 />
             ))}
 
         </div>
-    )
-}
+    );
+};
 
 export default TodoList;

@@ -3,6 +3,7 @@ import React from 'react';
 import TodoForm from './components/TodoComponents/TodoForm.js';
 import TodoList from './components/TodoComponents/TodoList.js';
 
+import "./components/TodoComponents/Todo.css";
 
 const data = [{}];
 
@@ -18,6 +19,22 @@ class App extends React.Component {
 
     };
 
+  }
+
+  toggleCompleted = todoId => {
+    console.log("togglingCompleted: ", todoId);
+
+    this.setState({
+      todos: this.state.todos.map(todo => {
+        if(todo.id === todoId) {
+          return {
+            ...todo,
+            completed: !todo.completed
+          };
+        }
+        return todo;
+      })
+    });
   }
 
   addTodo = todoName => {

@@ -38,7 +38,7 @@ class TodoForm extends React.Component {
 
                 <button>Add ToDo</button>
             </form>
-        )
+        );
     }
 
 
