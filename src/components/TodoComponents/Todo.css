@@ -1,0 +1,21 @@
+body {
+    display: flex;
+    justify-content: center;
+}
+
+.App div {
+    display: flex;
+    flex-direction: column;
+}
+
+.todo {
+    display: flex;
+    flex-direction: column;
+    padding-left: 2%;
+    /* max-width: */
+}
+
+.todo.completed {
+    background-color: black;
+    color: lightblue;
+}
