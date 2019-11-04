@@ -11,9 +11,11 @@ body {
 .todo {
     display: flex;
     flex-direction: column;
+    padding-left: 2%;
     /* max-width: */
 }
 
 .todo.completed {
     background-color: black;
+    color: lightblue;
 }
